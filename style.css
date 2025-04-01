@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.score-label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#score {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    min-width: 80px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 2px;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto 20px;
+}
+
+.candy {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candy::before {
+    content: '';
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 15%;
+    left: 15%;
+}
+
+.candy:hover {
+    transform: scale(1.1);
+}
+
+.candy.selected {
+    box-shadow: 0 0 0 3px white, 0 0 0 5px #333;
+    z-index: 1;
+}
+
+.candy.type1 { background-color: #ff6b6b; } /* Red */
+.candy.type2 { background-color: #4ecdc4; } /* Teal */
+.candy.type3 { background-color: #ffe66d; } /* Yellow */
+.candy.type4 { background-color: #6a0572; } /* Purple */
+.candy.type5 { background-color: #1db954; } /* Green */
+.candy.type6 { background-color: #ff9a3c; } /* Orange */
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff5252;
+}
+
+@keyframes drop {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.drop {
+    animation: drop 0.3s ease forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.pop {
+    animation: pop 0.3s ease forwards;
+}
