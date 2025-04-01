@@ -253,3 +253,68 @@ button:hover {
 .pop {
     animation: pop 0.3s ease forwards;
 }
+
+@keyframes moveRight {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 0); }
+}
+
+@keyframes moveLeft {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, 0); }
+}
+
+@keyframes moveUp {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -50px); }
+}
+
+@keyframes moveDown {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, 50px); }
+}
+
+.moveRight {
+    animation: moveRight 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+.moveLeft {
+    animation: moveLeft 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+.moveUp {
+    animation: moveUp 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+.moveDown {
+    animation: moveDown 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+/* Make sure the banana stays oriented properly during movement */
+.candy.type3.moveRight {
+    animation: moveRight 0.3s ease;
+    animation-fill-mode: forwards;
+    transform: rotate(45deg);
+}
+
+.candy.type3.moveLeft {
+    animation: moveLeft 0.3s ease;
+    animation-fill-mode: forwards;
+    transform: rotate(45deg);
+}
+
+.candy.type3.moveUp {
+    animation: moveUp 0.3s ease;
+    animation-fill-mode: forwards;
+    transform: rotate(45deg);
+}
+
+.candy.type3.moveDown {
+    animation: moveDown 0.3s ease;
+    animation-fill-mode: forwards;
+    transform: rotate(45deg);
+}
